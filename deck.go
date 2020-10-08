@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
+	"strings"
 )
 
 type deck []string
@@ -29,4 +31,8 @@ func (d deck) print() {
 
 func deal(d deck, cardsToTake int) (deck, deck) {
 	return d[:cardsToTake], d[cardsToTake:]
+}
+
+func (d deck) toString() string {
+	return strings.Join([]string(d), ",")
 }
